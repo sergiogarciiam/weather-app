@@ -20,9 +20,8 @@ function createTitle() {
   const actualDate = document.createElement("h3");
 
   titleContainer.classList.add("title-container");
-
-  cityName.textContent = "Hello";
-  actualDate.textContent = "20";
+  cityName.classList.add("city-name");
+  actualDate.classList.add("actual-date");
 
   titleContainer.appendChild(cityName);
   titleContainer.appendChild(actualDate);

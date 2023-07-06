@@ -34,8 +34,15 @@ function createToggle() {
   const button = document.createElement("button");
 
   toggleContainer.classList.add("toggle-container");
+  button.classList.add("toggle-button");
+
+  button.addEventListener("click", toggleActive);
 
   toggleContainer.appendChild(button);
 
   return toggleContainer;
+}
+
+function toggleActive(event) {
+  event.target.classList.toggle("active");
 }

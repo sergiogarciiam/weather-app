@@ -45,3 +45,9 @@
   font-size: 1.1rem;
   font-weight: bolder;
 }
+
+.day-container,
+.hour-container {
+  width: 1000px;
+  text-align: center;
+}

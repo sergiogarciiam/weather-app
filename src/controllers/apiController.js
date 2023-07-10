@@ -24,37 +24,37 @@ function processData(data) {
 
     forecastDays: [
       {
-        day: data.forecast.forecastday[0].date,
+        day: dateToWeek(data.forecast.forecastday[0].date),
         minTempC: `${data.forecast.forecastday[0].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[0].day.maxtemp_c} ºC`,
       },
       {
-        day: data.forecast.forecastday[1].date,
+        day: dateToWeek(data.forecast.forecastday[1].date),
         minTempC: `${data.forecast.forecastday[1].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[1].day.maxtemp_c} ºC`,
       },
       {
-        day: data.forecast.forecastday[2].date,
+        day: dateToWeek(data.forecast.forecastday[2].date),
         minTempC: `${data.forecast.forecastday[2].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[2].day.maxtemp_c} ºC`,
       },
       {
-        day: data.forecast.forecastday[3].date,
+        day: dateToWeek(data.forecast.forecastday[3].date),
         minTempC: `${data.forecast.forecastday[3].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[3].day.maxtemp_c} ºC`,
       },
       {
-        day: data.forecast.forecastday[4].date,
+        day: dateToWeek(data.forecast.forecastday[4].date),
         minTempC: `${data.forecast.forecastday[4].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[4].day.maxtemp_c} ºC`,
       },
       {
-        day: data.forecast.forecastday[5].date,
+        day: dateToWeek(data.forecast.forecastday[5].date),
         minTempC: `${data.forecast.forecastday[5].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[5].day.maxtemp_c} ºC`,
       },
       {
-        day: data.forecast.forecastday[6].date,
+        day: dateToWeek(data.forecast.forecastday[6].date),
         minTempC: `${data.forecast.forecastday[6].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[6].day.maxtemp_c} ºC`,
       },
@@ -159,4 +159,21 @@ function processData(data) {
       },
     ],
   };
+}
+
+function dateToWeek(stringDate) {
+  const date = new Date(stringDate);
+  const dayOfWeek = date.getDay();
+
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return daysOfWeek[dayOfWeek];
 }

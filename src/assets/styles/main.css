@@ -1,0 +1,22 @@
+.main-container {
+  grid: main;
+}
+
+.main-stat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-stat-container > img {
+  width: 70px;
+}
+
+.main-stat-container > h2 {
+  font-size: 10rem;
+}
+
+.main-stat-container > p {
+  color: var(--second-letter-color);
+  font-size: 3rem;
+}

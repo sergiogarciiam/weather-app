@@ -1,0 +1,39 @@
+:root {
+  --background-color: #1d2c37;
+
+  --letter-color: #ffffff;
+  --second-letter-color: #777777;
+
+  --search-color: #5f6d83;
+  --toggle-color: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--background-color);
+  color: var(--letter-color);
+}
+
+.page-container {
+  width: 100vw;
+  height: 100vh;
+
+  grid-template-areas: "header" "main" "forecast" "links";
+  grid-template-rows: 1fr 3fr 2fr 0.5fr;
+  gap: 50px;
+
+  padding: 50px 100px;
+  display: grid;
+}
+
+.links {
+  grid-area: links;
+  font-size: 1.1rem;
+  text-align: center;
+}

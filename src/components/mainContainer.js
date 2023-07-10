@@ -1,5 +1,5 @@
 export const createMainContainer = () => {
-  const mainContainer = document.createElement("main");
+  const mainContainer = document.createElement("div");
   mainContainer.classList.add("main-container");
 
   mainContainer.appendChild(createMainStat());

@@ -4,7 +4,7 @@ import { createMainContainer } from "../components/mainContainer";
 import { createLinks } from "../components/links";
 
 export const createPageContainer = () => {
-  const pageContainer = document.createElement("header");
+  const pageContainer = document.createElement("div");
   pageContainer.classList.add("page-container");
 
   pageContainer.appendChild(createHeaderContainer());

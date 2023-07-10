@@ -1,32 +1,24 @@
 export const createMainContainer = () => {
   const mainContainer = document.createElement("div");
-  mainContainer.classList.add("main-container");
+  const actualTemperature = document.createElement("h2");
+  const conditionContainer = document.createElement("p");
+  const condition = document.createElement("p");
+  const image = document.createElement("img");
+  const minMaxTemperature = document.createElement("p");
 
-  mainContainer.appendChild(createMainStat());
-  //mainContainer.appendChild(createSecondStat());
+  mainContainer.classList.add("main-container");
+  actualTemperature.classList.add("actual-temperature");
+  conditionContainer.classList.add("condition-container");
+  condition.classList.add("condition");
+  image.classList.add("condition-image");
+  minMaxTemperature.classList.add("min-max-temperature");
+
+  conditionContainer.appendChild(condition);
+  conditionContainer.appendChild(image);
+
+  mainContainer.appendChild(actualTemperature);
+  mainContainer.appendChild(conditionContainer);
+  mainContainer.appendChild(minMaxTemperature);
 
   return mainContainer;
 };
-
-function createMainStat() {
-  const mainStatContainer = document.createElement("div");
-  const image = document.createElement("img");
-  const actualTemperature = document.createElement("h2");
-  const condition = document.createElement("p");
-  const minMaxTemperature = document.createElement("p");
-
-  mainStatContainer.classList.add("main-stat-container");
-  image.classList.add("condition-image");
-  actualTemperature.classList.add("actual-temperature");
-  condition.classList.add("condition");
-  minMaxTemperature.classList.add("min-max-temperature");
-
-  mainStatContainer.appendChild(image);
-  mainStatContainer.appendChild(actualTemperature);
-  mainStatContainer.appendChild(condition);
-  mainStatContainer.appendChild(minMaxTemperature);
-
-  return mainStatContainer;
-}
-
-function createSecondStat() {}

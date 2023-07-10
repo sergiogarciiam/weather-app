@@ -52,7 +52,7 @@ function createDaily() {
   const container = document.createElement("div");
   container.classList.add("daily-hourly-container");
 
-  for (let index = 0; index < 14; index++) {
+  for (let index = 0; index < 7; index++) {
     container.appendChild(createSpecificForecast("day"));
   }
 
@@ -63,7 +63,7 @@ function createHourly() {
   const container = document.createElement("div");
   container.classList.add("daily-hourly-container");
 
-  for (let index = 0; index < 14; index++) {
+  for (let index = 0; index < 24; index++) {
     container.appendChild(createSpecificForecast("hour"));
   }
 

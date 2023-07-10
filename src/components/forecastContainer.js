@@ -1,3 +1,6 @@
+import { renderDataController } from "../controllers/renderDataController";
+import { $ } from "../utils/selectorUtil";
+
 let TYPE = "Daily";
 
 export const createForecastContainer = () => {
@@ -38,8 +41,10 @@ function setSelection(event) {
 
   if (TYPE === "Daily") {
     forecast.appendChild(createDaily());
+    renderDataController.setDaysData();
   } else {
     forecast.appendChild(createHourly());
+    renderDataController.setHoursData();
   }
 }
 

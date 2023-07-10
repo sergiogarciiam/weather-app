@@ -1,3 +1,6 @@
+import { renderDataController } from "../controllers/renderDataController";
+import { $ } from "../utils/selectorUtil";
+
 export const createHeaderContainer = () => {
   const headerContainer = document.createElement("header");
   headerContainer.classList.add("header-container");
@@ -11,6 +14,15 @@ export const createHeaderContainer = () => {
 
 function createSearch() {
   const input = document.createElement("input");
+  input.classList.add("search");
+
+  input.addEventListener("focus", () => {
+    document.addEventListener("keydown", handleKeyDown);
+  });
+
+  input.addEventListener("blur", () => {
+    document.removeEventListener("keydown", handleKeyDown);
+  });
   return input;
 }
 
@@ -45,4 +57,14 @@ function createToggle() {
 
 function toggleActive(event) {
   event.target.classList.toggle("active");
+}
+
+function handleKeyDown(event) {
+  const input = $(".search");
+  if (event.keyCode === 13) {
+    renderDataController
+      .fillData(input.value)
+      .then(() => (input.value = ""))
+      .catch(() => console.log("No city"));
+  }
 }

@@ -3,10 +3,19 @@ import { getData } from "./apiController";
 
 export const renderDataController = (() => {
   let data = null;
+  let metric = "c";
 
-  async function fillData(location, metric) {
-    data = await getData(location, metric);
+  async function fillDataFromNew(location) {
+    data = await getData(location);
+    fillData();
+  }
 
+  function changeMetric() {
+    metric = metric === "c" ? "f" : "c";
+    fillData();
+  }
+
+  function fillData() {
     const cityName = $(".city-name");
     const actualDate = $(".actual-date");
 
@@ -15,17 +24,16 @@ export const renderDataController = (() => {
     const condition = $(".condition");
     const minMaxTemperature = $(".min-max-temperature");
 
-    console.log(data);
-
     // header
     cityName.textContent = data.location;
     actualDate.textContent = data.time;
 
     // main
     conditionImage.src = data.icon;
-    actualTemperature.textContent = data.tempC;
+    actualTemperature.textContent = metric === "c" ? data.tempC : data.tempF;
     condition.textContent = data.condition;
-    minMaxTemperature.textContent = data.minMaxTempC;
+    minMaxTemperature.textContent =
+      metric === "c" ? data.minMaxTempC : data.minMaxTempF;
 
     // forecast
     setDaysData();
@@ -43,8 +51,10 @@ export const renderDataController = (() => {
       const maxTemperature = dayContainer.querySelector(".forecast-max");
 
       day.textContent = forecast[cont].day;
-      minTemperature.textContent = forecast[cont].minTempC;
-      maxTemperature.textContent = forecast[cont].maxTempC;
+      minTemperature.textContent =
+        metric === "c" ? forecast[cont].minTempC : forecast[cont].minTempF;
+      maxTemperature.textContent =
+        metric === "c" ? forecast[cont].maxTempC : forecast[cont].maxTempF;
 
       cont += 1;
     });
@@ -60,11 +70,12 @@ export const renderDataController = (() => {
       const minTemperature = dayContainer.querySelector(".forecast-min");
 
       hour.textContent = forecast[cont].hour;
-      minTemperature.textContent = forecast[cont].tempC;
+      minTemperature.textContent =
+        metric === "c" ? forecast[cont].tempC : forecast[cont].tempF;
 
       cont += 1;
     });
   }
 
-  return { fillData, setDaysData, setHoursData };
+  return { fillDataFromNew, changeMetric, setDaysData, setHoursData };
 })();

@@ -12,4 +12,4 @@ import "@fortawesome/fontawesome-free/js/regular";
 import "@fortawesome/fontawesome-free/js/brands";
 
 createPageContainer();
-renderDataController.fillData("Madrid");
+renderDataController.fillDataFromNew("Madrid");

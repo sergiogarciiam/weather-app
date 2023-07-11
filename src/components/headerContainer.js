@@ -57,13 +57,14 @@ function createToggle() {
 
 function toggleActive(event) {
   event.target.classList.toggle("active");
+  renderDataController.changeMetric();
 }
 
 function handleKeyDown(event) {
   const input = $(".search");
   if (event.keyCode === 13) {
     renderDataController
-      .fillData(input.value)
+      .fillDataFromNew(input.value)
       .then(() => (input.value = ""))
       .catch(() => console.log("No city"));
   }

@@ -25,49 +25,49 @@ function processData(data) {
 
     forecastDays: [
       {
-        day: dateToWeek(data.forecast.forecastday[0].date),
+        day: getDateToWeek(data.forecast.forecastday[0].date),
         minTempC: `${data.forecast.forecastday[0].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[0].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[0].day.mintemp_f} ºF`,
         maxTempF: `${data.forecast.forecastday[0].day.maxtemp_f} ºF`,
       },
       {
-        day: dateToWeek(data.forecast.forecastday[1].date),
+        day: getDateToWeek(data.forecast.forecastday[1].date),
         minTempC: `${data.forecast.forecastday[1].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[1].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[1].day.mintemp_f} ºF`,
         maxTempF: `${data.forecast.forecastday[1].day.maxtemp_f} ºF`,
       },
       {
-        day: dateToWeek(data.forecast.forecastday[2].date),
+        day: getDateToWeek(data.forecast.forecastday[2].date),
         minTempC: `${data.forecast.forecastday[2].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[2].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[2].day.mintemp_f} ºF`,
         maxTempF: `${data.forecast.forecastday[2].day.maxtemp_f} ºF`,
       },
       {
-        day: dateToWeek(data.forecast.forecastday[3].date),
+        day: getDateToWeek(data.forecast.forecastday[3].date),
         minTempC: `${data.forecast.forecastday[3].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[3].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[3].day.mintemp_f} ºF`,
         maxTempF: `${data.forecast.forecastday[3].day.maxtemp_f} ºF`,
       },
       {
-        day: dateToWeek(data.forecast.forecastday[4].date),
+        day: getDateToWeek(data.forecast.forecastday[4].date),
         minTempC: `${data.forecast.forecastday[4].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[4].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[4].day.mintemp_f} ºF`,
         maxTempF: `${data.forecast.forecastday[4].day.maxtemp_f} ºF`,
       },
       {
-        day: dateToWeek(data.forecast.forecastday[5].date),
+        day: getDateToWeek(data.forecast.forecastday[5].date),
         minTempC: `${data.forecast.forecastday[5].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[5].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[5].day.mintemp_f} ºF`,
         maxTempF: `${data.forecast.forecastday[5].day.maxtemp_f} ºF`,
       },
       {
-        day: dateToWeek(data.forecast.forecastday[6].date),
+        day: getDateToWeek(data.forecast.forecastday[6].date),
         minTempC: `${data.forecast.forecastday[6].day.mintemp_c} ºC`,
         maxTempC: `${data.forecast.forecastday[6].day.maxtemp_c} ºC`,
         minTempF: `${data.forecast.forecastday[6].day.mintemp_f} ºF`,
@@ -200,7 +200,7 @@ function processData(data) {
   };
 }
 
-function dateToWeek(stringDate) {
+function getDateToWeek(stringDate) {
   const date = new Date(stringDate);
   const dayOfWeek = date.getDay();
 

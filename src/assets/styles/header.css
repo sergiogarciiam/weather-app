@@ -1,11 +1,12 @@
 .header-container {
   grid-area: header;
 
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-areas: "search title toggle";
 }
 
 .search-container {
+  grid-area: search;
   position: relative;
 }
 
@@ -29,6 +30,7 @@
 }
 
 .title-container {
+  grid-area: title;
   margin-left: 20px;
 }
 
@@ -41,6 +43,8 @@
 }
 
 .toggle-container {
+  grid-area: toggle;
+
   position: relative;
   margin-left: auto;
 

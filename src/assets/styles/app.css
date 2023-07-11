@@ -29,7 +29,7 @@ body {
 
   grid-template-areas: "header" "main" "forecast" "links";
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 2fr 0.9fr;
+  grid-template-rows: 1fr 3fr 2fr 0.5fr;
   gap: 50px;
 
   padding: 20px;

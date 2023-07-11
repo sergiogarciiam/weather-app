@@ -13,8 +13,13 @@ export const createHeaderContainer = () => {
 };
 
 function createSearch() {
+  const searchContainer = document.createElement("div");
   const input = document.createElement("input");
+  const icon = document.createElement("i");
+
+  searchContainer.classList.add("search-container");
   input.classList.add("search");
+  icon.className = "fa-solid fa-magnifying-glass";
 
   input.addEventListener("focus", () => {
     document.addEventListener("keydown", handleKeyDown);
@@ -23,7 +28,11 @@ function createSearch() {
   input.addEventListener("blur", () => {
     document.removeEventListener("keydown", handleKeyDown);
   });
-  return input;
+
+  searchContainer.appendChild(input);
+  searchContainer.appendChild(icon);
+
+  return searchContainer;
 }
 
 function createTitle() {
@@ -47,6 +56,7 @@ function createToggle() {
 
   toggleContainer.classList.add("toggle-container");
   button.classList.add("toggle-button");
+  button.textContent = "ºC";
 
   button.addEventListener("click", toggleActive);
 
@@ -57,6 +67,7 @@ function createToggle() {
 
 function toggleActive(event) {
   event.target.classList.toggle("active");
+  event.target.textContent = event.target.textContent === "ºC" ? "ºF" : "ºC";
   renderDataController.changeMetric();
 }
 

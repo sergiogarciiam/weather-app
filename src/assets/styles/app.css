@@ -35,7 +35,19 @@ body {
 }
 
 .links {
+  justify-self: center;
   grid-area: links;
+
+  display: flex;
+  gap: 20px;
   font-size: 1.1rem;
-  text-align: center;
+}
+
+.links > a {
+  color: var(--letter-color);
+  text-decoration: none;
+}
+
+.links > a:hover {
+  text-decoration: underline;
 }

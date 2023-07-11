@@ -5,6 +5,8 @@
   --second-letter-color: #777777;
 
   --search-color: #5f6d83;
+  --forecast-color: #5f6d8313;
+
   --toggle-color: #222222;
 }
 
@@ -21,12 +23,13 @@ body {
 }
 
 .page-container {
-  width: 1200px;
+  width: 90vw;
   height: 100vh;
 
   margin: auto;
 
   grid-template-areas: "header" "main" "forecast" "links";
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 3fr 3fr 0.5fr;
   gap: 50px;
 

@@ -1,9 +1,9 @@
 .forecast-container {
   grid-area: forecast;
-
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-x: auto;
 }
 
 .forecast-container > select {
@@ -20,17 +20,16 @@
 }
 
 .daily-hourly-container {
-  flex: 1;
-  max-width: 1200px;
+  flex: 0.9;
+
   display: flex;
   gap: 80px;
 
   padding: 20px;
   border-radius: 20px;
 
+  background-color: var(--forecast-color);
   overflow-x: auto;
-
-  box-shadow: 1px 1px 10px var(--toggle-color);
 }
 
 .daily-hourly-container > div {
@@ -40,14 +39,14 @@
   gap: 20px;
 }
 
+.day-container > p,
+.hour-container > p {
+  text-align: center;
+  width: 100px;
+}
+
 .forecast-hour,
 .forecast-day {
   font-size: 1.1rem;
   font-weight: bolder;
-}
-
-.day-container,
-.hour-container {
-  width: 1000px;
-  text-align: center;
 }
